@@ -1,18 +1,12 @@
-name: black-action
+name: url
 on: [push, pull_request]
 jobs:
-  linter_name:
-    name: runner / black formatter
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: datadog/action-py-black-formatter@v2.1
-        with:
-          check_mode: "true"
-
-      - name: Check the deployed service URL
-        uses: jtalk/url-health-check-action@v4
-        with:
+     - name: Check the deployed service URL
+       uses: jtalk/url-health-check-action@v4
+       with:
           # Check the following URLs one by one sequentially
           url: https://paweu.azurewebsites.net/
           # Follow redirects, or just report success on 3xx status codes
