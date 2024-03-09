@@ -5,6 +5,8 @@
 name: Build and deploy Python app to Azure Web App - Paweu
 
 on:
+  pull_request:
+    branches: ['main']
   push:
     branches:
       - main
