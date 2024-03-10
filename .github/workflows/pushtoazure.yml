@@ -6,6 +6,7 @@ name: Build and deploy Python app to Azure Web App - Paweu
 
 on:
   pull_request:
+    types: [labeled, closed]
     branches: ['main']
   workflow_dispatch:
 
