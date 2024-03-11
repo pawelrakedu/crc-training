@@ -1,7 +1,6 @@
 ---
 
-- name: Network Getting Started First Playbook
-  connection: ansible.netcommon.network_cli
+- name: test
   gather_facts: false
   hosts: all
   tasks:
