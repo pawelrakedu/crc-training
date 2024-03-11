@@ -1,9 +1,9 @@
 ---
-
 - name: Playbook
   gather_facts: true
   hosts: all
   tasks:
     - name: Check ssh service
-      command: ssh
-      state: started
+      service: 
+        name: ssh
+        state: started
