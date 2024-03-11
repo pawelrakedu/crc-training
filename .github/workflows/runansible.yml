@@ -31,21 +31,11 @@ jobs:
           # Optional, directory where playbooks live
           directory: /home/runner/work/crc-training/crc-training/
           # Optional, ansible configuration file content (ansible.cfg)
-          configuration: |
-            [defaults]
-            callbacks_enabled = ansible.posix.profile_tasks, ansible.posix.timer
-            stdout_callback = yaml
-            nocows = false
           # Optional, SSH private key
           key: ${{secrets.SSH_PRIVATE_KEY}}
           # Optional, literal inventory file contents
           inventory: |
             [all]
-            172.210.58.248
+            172.210.58.248 ansible_ssh_user=azureuser
           # Optional, SSH known hosts file content
-          # Optional, encrypted vault password
-          vault_password: ${{secrets.VAULT_PASSWORD}}
           # Optional, additional flags to pass to ansible-playbook
-          options: |
-            --extra-vars hello=there
-            --verbose
