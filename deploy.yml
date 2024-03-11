@@ -1,9 +1,10 @@
 ---
 
-- name: test
-  gather_facts: false
+- name: Playbook
+  gather_facts: true
   hosts: all
   tasks:
 
-    - name: Return motd to registered var
-      command: ls
+    - name: Check ssh service
+      command: ssh
+      state: started
