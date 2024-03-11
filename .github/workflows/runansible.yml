@@ -41,7 +41,7 @@ jobs:
           # Optional, literal inventory file contents
           inventory: |
             [all]
-            localhost
+            172.210.58.248
           # Optional, SSH known hosts file content
           # Optional, encrypted vault password
           vault_password: ${{secrets.VAULT_PASSWORD}}
