@@ -41,16 +41,11 @@ jobs:
           # Optional, literal inventory file contents
           inventory: |
             [all]
-            172.210.58.248
-      
-            [group1]
-            example.com
+            localhost
           # Optional, SSH known hosts file content
           # Optional, encrypted vault password
           vault_password: ${{secrets.VAULT_PASSWORD}}
           # Optional, additional flags to pass to ansible-playbook
           options: |
-            --inventory .hosts
-            --limit group1
             --extra-vars hello=there
             --verbose
