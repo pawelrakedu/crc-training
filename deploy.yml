@@ -9,4 +9,7 @@
         state: started
 
     - name: Check files inside of directory
-      ansible.builtin.command: ls . 
+      ansible.builtin.command: ls .
+      register: out
+
+    - debug: var=out.stdout_lines
