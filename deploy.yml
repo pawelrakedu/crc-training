@@ -14,14 +14,14 @@
     - debug: var=out.stdout_lines
 
     - name: Check files inside of directory
-      ansible.builtin.command: ls {{ var }}
+      ansible.builtin.command: ls /home/azureuser
       register: out
     - debug: var=out.stdout_lines
 
-    # - name: Touch the file
-    #   ansible.builtin.file:
-    #     path: {{ var }}/test.txt
-    #     state: touch
+    - name: Touch the file
+      ansible.builtin.file:
+        path: /home/azureuser/test.txt
+        state: touch
 
     # - name: Check files inside of directory
     #   ansible.builtin.command: ls {{ var }}
