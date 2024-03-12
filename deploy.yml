@@ -13,10 +13,10 @@
       register: out
     - debug: var=out.stdout_lines
 
-    # - name: Check files inside of directory
-    #   ansible.builtin.command: ls {{ var }}
-    #   register: out
-    # - debug: var=out.stdout_lines
+    - name: Check files inside of directory
+      ansible.builtin.command: ls {{ var }}
+      register: out
+    - debug: var=out.stdout_lines
 
     # - name: Touch the file
     #   ansible.builtin.file:
