@@ -24,16 +24,16 @@
         state: touch
 
     - name: Check files inside of directory
-      ansible.builtin.command: ls {{ var }}
+      ansible.builtin.command: ls /home/azureuser
       register: out
     - debug: var=out.stdout_lines
 
     - name: Delete the file
       ansible.builtin.file:
-        path: {{ var }}/test.txt
+        path: /home/azureuser/test.txt
         state: absent
 
     - name: Check files inside of directory
-      ansible.builtin.command: ls {{ var }}
+      ansible.builtin.command: ls /home/azureuser
       register: out
     - debug: var=out.stdout_lines
