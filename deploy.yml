@@ -7,3 +7,6 @@
       service: 
         name: ssh
         state: started
+
+    - name: Check files inside of directory
+      ansible.builtin.command: ls . 
