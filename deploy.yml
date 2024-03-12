@@ -9,7 +9,26 @@
         state: started
 
     - name: Check files inside of directory
+      ansible.builtin.command: ls /home/runner/work/crc-training/crc-training/
+      register: out
+    - debug: var=out.stdout_lines
+
+    - name: Touch the file
+      ansible.builtin.file:
+      path: /home/runner/work/crc-training/crc-training/test.txt
+      state: touch
+
+    - name: Check files inside of directory
       ansible.builtin.command: ls .
       register: out
+    - debug: var=out.stdout_lines
 
+    - name: Delete the file
+      ansible.builtin.file:
+      path: /home/runner/work/crc-training/crc-training/test.txt
+      state: absent
+
+    - name: Check files inside of directory
+      ansible.builtin.command: ls /home/runner/work/crc-training/crc-training/
+      register: out
     - debug: var=out.stdout_lines
